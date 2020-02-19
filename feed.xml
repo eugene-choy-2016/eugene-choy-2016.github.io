@@ -1,24 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-14T08:54:22+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Eugene Choy Wen Jia</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Happy Toilet Social Analytics</title><link href="http://localhost:4000/social%20analytics/analytics/python/flask/2019/08/01/HappyToilet.html" rel="alternate" type="text/html" title="Happy Toilet Social Analytics" /><published>2019-08-01T18:44:42+08:00</published><updated>2019-08-01T18:44:42+08:00</updated><id>http://localhost:4000/social%20analytics/analytics/python/flask/2019/08/01/HappyToilet</id><content type="html" xml:base="http://localhost:4000/social%20analytics/analytics/python/flask/2019/08/01/HappyToilet.html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
-&lt;p&gt;I embarked on this project as part of a module called Social Analytics and Applications. We were required to look for a client who may have a social business problem that we can look into. We decided to work with Restroom Association to identify social trends and insights from Social Media with regards to public toilet in Singapore.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-19T15:03:42+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Eugene Choy Wen Jia</title><subtitle>Previous Works I have embarked on either in school or for personal interest</subtitle><entry><title type="html">Happy Toilet: Social Analytics approach to study of Public Toilet Cleanliness</title><link href="http://localhost:4000/social%20analytics/analytics/python/flask/2019/08/01/HappyToilet.html" rel="alternate" type="text/html" title="Happy Toilet: Social Analytics approach to study of Public Toilet Cleanliness" /><published>2019-08-01T18:44:42+08:00</published><updated>2019-08-01T18:44:42+08:00</updated><id>http://localhost:4000/social%20analytics/analytics/python/flask/2019/08/01/HappyToilet</id><content type="html" xml:base="http://localhost:4000/social%20analytics/analytics/python/flask/2019/08/01/HappyToilet.html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;I embarked on this project as part of a module called Social Analytics and Applications. We were required to look for a client who may have a social business problem that we can look into. We decided to work with Restroom Association to identify social trends and insights from Social Media with regards to public toilet in Singapore. As this was a team project, each of us has individual roles and took on the role of a “architect’ and ‘integrator’ to plan and develop the pipeline for implementing a potential Web App solution. I also developed the prototype for Web Soltution. This project was accepted as a poster at IEEE Big Data 2019 Conference under the guidance of Prof Kyong Jin Shim.&lt;/p&gt;
+
+&lt;h1 id=&quot;our-client&quot;&gt;Our Client&lt;/h1&gt;
+&lt;p&gt;Restroom Association is a non-profit organization which advocates clean public toilets in Singapore. They conduct yearly reviews/assesment for public toilets in various location and provide a rating ranging from 1-6 stars. A 6-star toilet means that the toilet is not only clean but have facilities which are user and environmentally friendly. After speaking to your client, we found that one of their difficulty was that there were limited volunteers and it is difficult for them to ensure toilets are clean between periods of assesment. This gave us the motivation to identify ways to provide them with timely updates and informations about various public toilets in Singapore. They also kindly provided us with a Evaluation Sheet which indicated criterias which they used to review each public toilets.&lt;/p&gt;
 
 &lt;h1 id=&quot;data-analysis&quot;&gt;Data Analysis&lt;/h1&gt;
+&lt;p&gt;As this is a analytics module, we were expected to collect data from different sources and gather insights related to social elements of public toilet. The next few sections discussed the process we took to gather insights as well as the insights gathered.&lt;/p&gt;
 
 &lt;h2 id=&quot;data-collection&quot;&gt;Data Collection&lt;/h2&gt;
 &lt;p&gt;The team collected data from sources such as Reddit, Twitter, Instagram and TripAdvisor using Web Scrapping techniques and various APIS available.&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;/assets/images/happytoiletarchi.png&quot; alt=&quot;Architecture&quot; /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;data-cleaning&quot;&gt;Data Cleaning&lt;/h2&gt;
 &lt;p&gt;As the data were collected from various Social Media source, there was a need to clean the data as there were some post that were captured which were not toilet related. We did some filtering by looking for keywords in the various post such as “urinal,cubicle,toilet,dirty,flush,poop,shit”. Post without any of the relevant toilet keywords were ommitted for further analysis.&lt;/p&gt;
 
+&lt;h2 id=&quot;data-preparation&quot;&gt;Data Preparation&lt;/h2&gt;
+&lt;p&gt;Since the data was largely unstructured, we needed to prepare the data to ensure that analysis and visualization can be done in a systematic manner.&lt;/p&gt;
+
+&lt;h3 id=&quot;geotagging&quot;&gt;Geotagging&lt;/h3&gt;
+&lt;p&gt;The key in bringing social value to the data collected from various sources was to tie the sentiments or comments to a specific toilet. This will be helpful to Restroom Association in identifying toilets which probably need “surprise” inspection. This requires us to employ several methods to pinpoint or estimate a potential location for any sentiment.&lt;/p&gt;
+
+&lt;h4 id=&quot;tagged-location&quot;&gt;Tagged Location&lt;/h4&gt;
+&lt;p&gt;Social Media such as Instagram has a higher likelihood of locations being tagged. In such instances, we do not need to do much further processing and just make use of the data we acquired through scraping Instagram posts.&lt;/p&gt;
+
+&lt;p&gt;Although twitter allows location to be tagged, most Singaporeans do not use this feature. Reddit also do not have a feature which allows location to be tagged and therefore other methods have to be employed to retrieve any potential location.&lt;/p&gt;
+
+&lt;h4 id=&quot;natural-language-processing&quot;&gt;Natural Language Processing&lt;/h4&gt;
+&lt;p&gt;As mentioned previously some social media do not have geotagging feature. However, many of these posts do mention the name of a various places around Singapore. Therefore we attempt to identify various potential location through extracting places in the posts.&lt;/p&gt;
+
+&lt;p&gt;From each post, we performed Tokenization and Lemmatization. We then try to identify locations by referencing a txt file which has street names and registerd happy toilet locations in Singapore. Sentimental analysis is also run on each post to determine if the post is positive, neutral or negative.&lt;/p&gt;
+
+&lt;h4 id=&quot;geocoding&quot;&gt;Geocoding&lt;/h4&gt;
+&lt;p&gt;The various locations identified were then geocoded by querying the landmarks in OneMap API to pinpoint a exact location for each individual post.&lt;/p&gt;
+
+&lt;h2 id=&quot;visualization--analysis&quot;&gt;Visualization &amp;amp; Analysis&lt;/h2&gt;
+&lt;p&gt;Several forms of visualizations and analysis were used to help us identify potential insights from the data that were collected from the various social media platform.&lt;/p&gt;
+
+&lt;h3 id=&quot;word-map&quot;&gt;Word Map&lt;/h3&gt;
+&lt;p&gt;Word Maps were generated from post retrieved by the various social media. These words helped to generate not only insights but also help to expand the reach for our data collection process as well.&lt;/p&gt;
+
+&lt;p&gt;One example of how the Word Map helped us expand our data collection was when we first created a wordmap from the captions of initial search of “@the_ultimate_toilet_rater” on Instagram after a simple research about toilet reviewers in Singapore:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/instagram_hashtag_wordmap.png&quot; alt=&quot;WordMap_Instagram_Initial&quot; /&gt;
+The WordMap generated help us identified some sample hashtags such as “#toiletsg”, “#sgtoilet”, “#singaporetoilet” , “#besttoiletsg” that we can look at to discover more post about public toilets in Singapore. However, there were also some interesting insights&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/instagram_filtered_wordmap.png&quot; alt=&quot;WordMap_Instagram_Filter&quot; /&gt;
+We further filtered out common and words with little value and generated a new WordMap. The newly generated WordMap provided us with some insightful words which could mean a lot for the Restroom Assocation.&lt;/p&gt;
+
+&lt;p&gt;Some of these words  we found could help to improve the coverage of evaluation criterias by Restroom Association since they are not present in the current evaluation sheet :&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;ply tissue : This phrase sounds like the number of ply of tissues could affect the experience for the user.&lt;/li&gt;
+  &lt;li&gt;butt spray : Although this may seem crude, it actually mean that having a bidet could improve the experience for the user.&lt;/li&gt;
+  &lt;li&gt;backsplash: Another word that was mentioned that was interesting is backsplash, seems like if something could be done about this phenomenom it would enhance the user’s experience for public toilet.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The insights we gathered from Twitter for the WordMap was drastically different with more emphasis on crimes such as peeping tom and obscene acts.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/twitter_wordmap.png&quot; alt=&quot;WordMap_Twitter&quot; /&gt;
+However, this was not the direction we were looking in and realized that Twitter was more useful for identifying crimes/news articles which happened in public toilets.&lt;/p&gt;
+
+&lt;h3 id=&quot;topic-modeling&quot;&gt;Topic Modeling&lt;/h3&gt;
+
 &lt;h2 id=&quot;insights-gathered&quot;&gt;Insights Gathered&lt;/h2&gt;
-
-&lt;h1 id=&quot;visualization&quot;&gt;Visualization&lt;/h1&gt;
-
-&lt;h2 id=&quot;wordmap&quot;&gt;WordMap&lt;/h2&gt;
-
-&lt;h2 id=&quot;topics-modelled&quot;&gt;Topics Modelled&lt;/h2&gt;
-
-&lt;h2 id=&quot;flask-web-app&quot;&gt;Flask Web App&lt;/h2&gt;
 
 &lt;h1 id=&quot;recommendations&quot;&gt;Recommendations&lt;/h1&gt;
 
-&lt;h2 id=&quot;social-media-campaign&quot;&gt;Social Media Campaign&lt;/h2&gt;</content><author><name></name></author><summary type="html">Introduction I embarked on this project as part of a module called Social Analytics and Applications. We were required to look for a client who may have a social business problem that we can look into. We decided to work with Restroom Association to identify social trends and insights from Social Media with regards to public toilet in Singapore.</summary></entry></feed>
+&lt;h2 id=&quot;flask-web-app&quot;&gt;Flask Web App&lt;/h2&gt;
+
+&lt;h2 id=&quot;social-media-campaign&quot;&gt;Social Media Campaign&lt;/h2&gt;
+
+&lt;h1 id=&quot;credits&quot;&gt;Credits&lt;/h1&gt;</content><author><name></name></author><summary type="html">Introduction I embarked on this project as part of a module called Social Analytics and Applications. We were required to look for a client who may have a social business problem that we can look into. We decided to work with Restroom Association to identify social trends and insights from Social Media with regards to public toilet in Singapore. As this was a team project, each of us has individual roles and took on the role of a “architect’ and ‘integrator’ to plan and develop the pipeline for implementing a potential Web App solution. I also developed the prototype for Web Soltution. This project was accepted as a poster at IEEE Big Data 2019 Conference under the guidance of Prof Kyong Jin Shim.</summary></entry></feed>

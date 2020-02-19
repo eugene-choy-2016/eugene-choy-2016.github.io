@@ -30,7 +30,7 @@
           <a href="/">Eugene Choy</a>
         </h2>
         <p class="tagline">Aikidoka. Coder.</p>
-        <ul class="social"><a href="https://github.com/eugene-choy-2016">
+        <ul class="social"><a href="https://github.com/tinytinydev">
               <li>
                 <i class="icon-github-circled"></i>
               </li>
@@ -63,7 +63,7 @@
 <h2 id="data-collection">Data Collection</h2>
 <p>The team collected data from sources such as Reddit, Twitter, Instagram and TripAdvisor using Web Scrapping techniques and various APIS available.</p>
 
-<p><img src="/assets/images/happytoiletarchi.png" alt="Architecture" /></p>
+<p style="text-align: center;"><img src="/assets/images/happytoiletarchi.png" alt="Architecture" /> <br /></p>
 
 <h2 id="data-cleaning">Data Cleaning</h2>
 <p>As the data were collected from various Social Media source, there was a need to clean the data as there were some post that were captured which were not toilet related. We did some filtering by looking for keywords in the various post such as “urinal,cubicle,toilet,dirty,flush,poop,shit”. Post without any of the relevant toilet keywords were ommitted for further analysis.</p>
@@ -95,11 +95,13 @@
 
 <p>One example of how the Word Map helped us expand our data collection was when we first created a wordmap from the captions of initial search of “@the_ultimate_toilet_rater” on Instagram after a simple research about toilet reviewers in Singapore:</p>
 
-<p><img src="/assets/images/instagram_hashtag_wordmap.png" alt="WordMap_Instagram_Initial" />
-The WordMap generated help us identified some sample hashtags such as “#toiletsg”, “#sgtoilet”, “#singaporetoilet” , “#besttoiletsg” that we can look at to discover more post about public toilets in Singapore. However, there were also some interesting insights</p>
+<p style="text-align: center;"><img src="/assets/images/instagram_hashtag_wordmap.png" alt="WordMap_Instagram_Initial" /> <br /></p>
 
-<p><img src="/assets/images/instagram_filtered_wordmap.png" alt="WordMap_Instagram_Filter" />
-We further filtered out common and words with little value and generated a new WordMap. The newly generated WordMap provided us with some insightful words which could mean a lot for the Restroom Assocation.</p>
+<p>The WordMap generated help us identified some sample hashtags such as “#toiletsg”, “#sgtoilet”, “#singaporetoilet” , “#besttoiletsg” that we can look at to discover more post about public toilets in Singapore. However, there were also some interesting insights</p>
+
+<p style="text-align: center;"><img src="/assets/images/instagram_filtered_wordmap.png" alt="WordMap_Instagram_Filter" /> <br /></p>
+
+<p>We further filtered out common and words with little value and generated a new WordMap. The newly generated WordMap provided us with some insightful words which could mean a lot for the Restroom Assocation.</p>
 
 <p>Some of these words  we found could help to improve the coverage of evaluation criterias by Restroom Association since they are not present in the current evaluation sheet :</p>
 <ol>
@@ -110,18 +112,49 @@ We further filtered out common and words with little value and generated a new W
 
 <p>The insights we gathered from Twitter for the WordMap was drastically different with more emphasis on crimes such as peeping tom and obscene acts.</p>
 
-<p><img src="/assets/images/twitter_wordmap.png" alt="WordMap_Twitter" />
+<p style="text-align: center;"><img src="/assets/images/twitter_wordmap.png" alt="WordMap_Twitter" /></p>
+
+<p><br />
 However, this was not the direction we were looking in and realized that Twitter was more useful for identifying crimes/news articles which happened in public toilets.</p>
 
 <h3 id="topic-modeling">Topic Modeling</h3>
+<p>We generated 20 topics with Topic Modeling on the Reddit’s data and discovered that Topic 3 was closely related to the public opinion regarding public’s toilet.</p>
 
-<h2 id="insights-gathered">Insights Gathered</h2>
+<p style="text-align: center;"><img src="/assets/images/topic_modelling_Topic3.png" alt="Topics_Generated" /></p>
+
+<p>From the topics we generated, we look into various post which has the keyword mentioned and found some really interesting insights.</p>
+
+<p style="text-align: center;"><img src="/assets/images/topic3_keywords.png" alt="Keywords_In_Topic3" /></p>
+
+<p>One of the more interesting insight was sentiments from public about the present of rating tablets in toilet. It seems like many people have chose not to provide a rating or feedback for each toilets due to doubts in clealiness of the tablets. This could be highlighted to toilets that having a rating tablet outside of the toilet can result in a more participated feedback system.</p>
 
 <h1 id="recommendations">Recommendations</h1>
+<p>With the various analysis and insights we found, some of the recommendations that we provided were:</p>
 
-<h2 id="flask-web-app">Flask Web App</h2>
+<ol>
+  <li>
+    <p>Enhancing the Toilet Assessment Criteria
+We found that having a bidet and the ply of tissues contributed to the overall experience of using a public toilet. These criterias were not found in the assesment criteria and as such we feedbacked about these criterias as possible addition.</p>
+  </li>
+  <li>
+    <p>Social Media Campaign
+We found that having a campaign with designated hashtag would be helpful for further tracking and isolation of dirty toilets. These campaigns can encourage social media users to report about dirty or even clean toilets to contribute in the rating consideration for various toilets.</p>
+  </li>
+</ol>
 
-<h2 id="social-media-campaign">Social Media Campaign</h2>
+<p style="text-align: center;"><img src="/assets/images/socialmedia_campaign.png" alt="SocialMedia_Campign" /></p>
+
+<h2 id="flask-web-app-prototype">Flask Web App Prototype</h2>
+<p>As part of the Social Analytics project, we also developed a Flask App prototype to imagine how a dashboard for tracking of toilet sentiments. We also did a “mockup” experiment to visualize how running the Social Media campaign might look like when tracked on the Flask App.</p>
+
+<p style="text-align: center;"><img src="/assets/images/FlaskApp_1.png" alt="Flask_Screen1" />
+<br /><br /></p>
+
+<p style="text-align: center;"><img src="/assets/images/FlaskApp_2.png" alt="Flask_Screen1" /></p>
+
+<p>This show how it might look like if the social media campaign encourage the #sgdirtytoilet hashtag to be used on instagram</p>
+
+<p style="text-align: center;"><img src="/assets/images/FlaskApp_Hashtag.png" alt="Flask_Screen1" /></p>
 
 <h1 id="credits">Credits</h1>
 
